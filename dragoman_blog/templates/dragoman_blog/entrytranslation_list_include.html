@@ -1,5 +1,6 @@
 {% load i18n  %}
 {% for entry in object_list %}
     <p>{{ entry.pub_date|date:"d b Y" }}<br/><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a>
+        {% render_placeholder entry.master.intro language object.language_code %}
     </p>
 {% endfor %}
