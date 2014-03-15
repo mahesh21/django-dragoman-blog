@@ -8,6 +8,7 @@ class ListByTagView(ListView):
     """ View for listing posts by tags"""
     template_name = "dragoman_blog/entrytranslation_list_by_tag.html"
     model = EntryTranslation
+    paginate_by=15
 
     def get_queryset(self):
         tag = self.kwargs.get('tag', '')
